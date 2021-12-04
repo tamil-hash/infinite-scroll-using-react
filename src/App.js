@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import loading from "../src/Circle-Loading.svg";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 function App() {
@@ -6,7 +7,6 @@ function App() {
   const [page, setPage] = useState(0);
 
   const getUser = async () => {
-    console.log("ok");
     setPage((page) => page + 1);
     const url = `https://randomuser.me/api/?page=${page}&results=10`;
     const response = await fetch(url);
@@ -36,7 +36,7 @@ function App() {
           hasMore={true}
           next={getUser}
           height={500}
-          loader={<h4>Loading...</h4>}
+          loader={<img className="loading" src={loading} />}
           scrollableTarget="scrollableDiv"
         >
           {users.map((user) => (

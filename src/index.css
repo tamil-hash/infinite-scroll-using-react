@@ -58,11 +58,18 @@
 }
 
 .users-container {
+  display: flex;
+  flex-flow: column;
   width: 100%;
   background: #e0e0e0;
   border-radius: 10px;
   box-shadow: 10px 10px 20px #5a5a5a, -10px -10px 20px #ffffff;
   overflow-y: scroll;
+}
+
+.loading {
+  margin: 10px auto;
+  height: 50px;
 }
 
 .each-user {
